@@ -49,7 +49,7 @@ Queue* newQueue(const int max_capacity) {
 
     Queue *q = malloc(sizeof(Queue));
     if (q == NULL) {
-        perror("Error: Failed to allocate memory for Queue structure");
+        fprintf(stderr, "Error: Failed to allocate memory for Queue structure.\n");
         return NULL;
     }
 
@@ -58,7 +58,7 @@ Queue* newQueue(const int max_capacity) {
     q->data = (int*)malloc(sizeof(int) * q->MAX_SIZE);
 
     if (q->data == NULL) {
-        perror("Error: Failed to allocate memory for data array");
+        fprintf(stderr, "Error: Failed to allocate memory for data array.\n");
         free(q);
         return NULL;
     }
@@ -90,7 +90,7 @@ void freeQueue(Queue *q) {
  */
 bool pushQueue(Queue *q, int value) {
     if (isQueueFull(q)) {
-        printf("Error: Queue is full, cannot push element %d.\n", value);
+        fprintf(stderr, "Error: Queue is full, cannot push element %d.\n", value);
         return false;
     }
 
@@ -112,7 +112,7 @@ bool pushQueue(Queue *q, int value) {
  */
 bool popQueue(Queue *q, int *result) {
     if (isQueueEmpty(q)) {
-        printf("Error: Queue is empty, cannot pop element.\n");
+        fprintf(stderr, "Error: Queue is empty, cannot pop element.\n");
         return false;
     }
 
@@ -134,7 +134,7 @@ bool popQueue(Queue *q, int *result) {
  */
 bool frontQueue(Queue *q, int *result) {
     if (isQueueEmpty(q)) {
-        printf("Error: Queue is empty, cannot peek front element.\n");
+        fprintf(stderr, "Error: Queue is empty, cannot peek front element.\n");
         return false;
     }
 

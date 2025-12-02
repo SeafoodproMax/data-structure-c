@@ -7,3 +7,4 @@ add_executable(template main.c
         List/CDLL.c)
 
 add_executable(Queue_test Queue/Queue.c)
+add_executable(Stack_test Stack/Stack.c)
