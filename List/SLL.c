@@ -40,6 +40,8 @@ SLLNode* insertSLL(SLLNode *head, int const value) {
 void deleteAfterSLL(SLLNode *head, int index) {
     if (!head) return;
     SLLNode *current = head;
+
+    index++;    // Move to the node before the one to delete (deleteAfter)
     while (index != 0 && current->next != NULL) {
         if (index == 1) {
             SLLNode *temp = current->next;
