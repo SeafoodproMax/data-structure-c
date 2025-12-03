@@ -6,5 +6,4 @@ set(CMAKE_C_STANDARD 11)
 add_executable(template main.c
         List/CDLL.c)
 
-add_executable(Queue_test Queue/Queue.c)
-add_executable(Stack_test Stack/Stack.c)
+add_executable(heap Heap/Heap.c)
