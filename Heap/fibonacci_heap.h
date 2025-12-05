@@ -5,41 +5,35 @@
 #ifndef TEMPLATE_FIBONACCI_HEAP_H
 #define TEMPLATE_FIBONACCI_HEAP_H
 
-#include <stdbool.h>
-#include <stdlib.h>
-
-#define MAX_DEGREE 128
-
 typedef struct FibNode FibNode;
-struct FibNode {
-    int value;
-    int degree;
-    bool childCut;
-    FibNode *parent;
-    FibNode *leftSibling;
-    FibNode *rightSibling;
-    FibNode *children;
-};
+typedef struct FibHeap FibHeap;
 
-extern FibNode *min;
-extern FibNode *rootHead;
-extern FibNode *rootTail;
-extern int node_count;
+FibHeap *createHeap(void);
 
-int comp(const void *x, const void *y);
-FibNode *newNode(int value);
-void addToRootList(FibNode *node);
-void removeFromList(FibNode *node);
-void fibHeapLink(FibNode *y, FibNode *x);
-void consolidate();
-void cut(FibNode *x, FibNode *y);
-void cascadingCut(FibNode *y);
-FibNode *findNodeInList(FibNode *head, int key);
-
-void insertHeap(int value);
-void extractMin(void);
-void decreaseKey(FibNode *x, int newValue);
-void printHeap();
-void deleteHeap(FibNode *x);
+/**
+ * @brief Insert a new value into the fibonacci heap
+ * @param heap The pointer to the operated fibonacci heap
+ * @param value The value to be inserted
+ */
+void insertHeap(FibHeap *heap, int value);
+/**
+ * @brief Extract the minimum value from the fibonacci heap
+ * @param heap The pointer to the operated fibonacci heap
+ */
+void extractMin(FibHeap *heap);
+/**
+ * @brief Decrease the key of a specific node (Standard CLRS implementation)
+ * Time Complexity: O(1) amortized
+ * @param heap The pointer to the operated fibonacci heap
+ * @param x The pointer to the node to be modified
+ * @param newValue The new value to be assigned
+ */
+void decreaseKey(FibHeap *heap, FibNode *x, int newValue);
+/**
+ * @brief Delete a node from the fibonacci heap
+ * @param heap The pointer to the operated fibonacci heap
+ * @param x A pointer to the node to be deleted
+ */
+void deleteNode(FibHeap *heap, FibNode *x);
 
 #endif //TEMPLATE_FIBONACCI_HEAP_H
