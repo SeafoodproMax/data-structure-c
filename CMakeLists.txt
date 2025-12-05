@@ -9,4 +9,4 @@ add_executable(template main.c
         DSU/DSU.c
         bloom_filter.c)
 
-add_executable(DSU DSU/DSU.c)
+add_executable(f-heap Heap/fibonacci_heap.c)
