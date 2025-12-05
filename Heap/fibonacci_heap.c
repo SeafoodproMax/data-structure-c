@@ -213,10 +213,11 @@ FibNode *findNodeInList(FibNode *head, int const key) {
     return NULL;    // result not found
 }
 
-void insertHeap(FibHeap *heap, int const value) {
+FibNode* insertHeap(FibHeap *heap, int const value) {
     FibNode *node = newNode(value);
     addToRootList(heap, node);
     heap->nodeCount++;
+    return node;
 }
 
 void extractMin(FibHeap *heap) {

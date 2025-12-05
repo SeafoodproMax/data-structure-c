@@ -15,7 +15,7 @@ FibHeap *createHeap(void);
  * @param heap The pointer to the operated fibonacci heap
  * @param value The value to be inserted
  */
-void insertHeap(FibHeap *heap, int value);
+FibNode* insertHeap(FibHeap *heap, int value);
 /**
  * @brief Extract the minimum value from the fibonacci heap
  * @param heap The pointer to the operated fibonacci heap
