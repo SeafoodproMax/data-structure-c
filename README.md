@@ -28,7 +28,4 @@ cd build
 cmake ..
 make
 
-Or compile manually
-
-##Note
-This repository is for learning purpose and may contain unfinished or experimental code
+Or compile manually with gcc
