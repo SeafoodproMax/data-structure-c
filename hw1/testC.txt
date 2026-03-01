@@ -1,0 +1,37 @@
+abcde
+5
+R
+R
+R
+R
+I X
+abcde
+5
+R
+R
+R
+R
+D
+abcde
+6
+L
+L
+L
+L
+L
+I X
+abcde
+5
+L
+L
+L
+L
+D
+abcde
+6
+L
+L
+L
+L
+L
+D

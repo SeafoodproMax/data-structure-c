@@ -1,0 +1,4 @@
+/Users/bill/Documents/NCKU/Sophomore/資料結構/HW/hw5/build_xcode/CMakeFiles/hw5.dir
+/Users/bill/Documents/NCKU/Sophomore/資料結構/HW/hw5/build_xcode/CMakeFiles/temp.dir
+/Users/bill/Documents/NCKU/Sophomore/資料結構/HW/hw5/build_xcode/CMakeFiles/ALL_BUILD.dir
+/Users/bill/Documents/NCKU/Sophomore/資料結構/HW/hw5/build_xcode/CMakeFiles/ZERO_CHECK.dir

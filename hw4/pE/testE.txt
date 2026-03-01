@@ -1,0 +1,32 @@
+30
+insert 100000 1
+insert 200000 2
+insert 300000 3
+insert 400000 4
+insert 500000 5
+insert 600000 6
+insert 700000 7
+insert 800000 8
+insert 900000 9
+insert 1000000 10
+delete 500000
+delete 1000000
+delete 100000
+delete 900000
+insert 1100000 11
+insert 1200000 12
+insert 1300000 13
+insert 1400000 14
+delete 1200000
+delete 1400000
+search 1300000
+search 1100000
+search 500000
+search 1000000
+insert 2000000 20
+insert 2100000 21
+insert 2200000 22
+delete 2100000
+delete 2000000
+search 2200000
+search 2000000
