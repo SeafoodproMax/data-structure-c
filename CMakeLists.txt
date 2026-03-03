@@ -10,3 +10,6 @@ add_executable(template main.c
         bloom_filter.c)
 
 add_executable(f-heap Heap/fibonacci_heap.c)
+add_executable(min-cost-spanning-tree Tree/MinCostSpanningTree.c)
+add_executable(stack Stack/Stack.c)
+add_executable(queue Queue/Queue.c)

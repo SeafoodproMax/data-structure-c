@@ -31,7 +31,7 @@ struct FibHeap {
 /**
  * @brief Create a new empty Fibonacci Heap
  */
-FibHeap *createHeap(void) {
+FibHeap *newFibHeap(void) {
     FibHeap *heap = malloc(sizeof(FibHeap));
     if (heap) {
         heap->min = NULL;
@@ -213,14 +213,14 @@ FibNode *findNodeInList(FibNode *head, int const key) {
     return NULL;    // result not found
 }
 
-FibNode* insertHeap(FibHeap *heap, int const value) {
+FibNode *insertFibHeap(FibHeap *heap, int const value) {
     FibNode *node = newNode(value);
     addToRootList(heap, node);
     heap->nodeCount++;
     return node;
 }
 
-void extractMin(FibHeap *heap) {
+void extractMinFibHeap(FibHeap *heap) {
     FibNode *z = heap->min;
     if (!z) {
         fprintf(stderr, "extractMin: empty heap\n");
@@ -251,7 +251,7 @@ void extractMin(FibHeap *heap) {
     free(z);
 }
 
-void decreaseKey(FibHeap *heap, FibNode *x, int const newValue) {
+void decreaseKeyFibHeap(FibHeap *heap, FibNode *x, int const newValue) {
     if (!heap->min || !x) return;
     if (newValue > x->value) {
         fprintf(stderr, "New key is greater than current key\n");
@@ -271,7 +271,7 @@ void decreaseKey(FibHeap *heap, FibNode *x, int const newValue) {
     }
 }
 
-void deleteNode(FibHeap *heap, FibNode *x) {
-    decreaseKey(heap, x, INT_MIN);
-    extractMin(heap);
+void deleteNodeFibHeap(FibHeap *heap, FibNode *x) {
+    decreaseKeyFibHeap(heap, x, INT_MIN);
+    extractMinFibHeap(heap);
 }
