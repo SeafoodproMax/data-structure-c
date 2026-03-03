@@ -51,14 +51,20 @@ The table below summarizes the exposed operations currently implemented in:
 | Tree utility | Kruskal minimum-cost spanning tree | `kruskal_mcst` | `O(E log E)` |
 | Tree utility | Prim minimum-cost spanning tree (array-based) | `prim_mcst` | `O(V^2)` |
 
-## Build & Run
+## Build & Run (CMake)
 ```bash
 cmake -S . -B build
 cmake --build build
-
 ./build/template
 ./build/f-heap
 ./build/min-cost-spanning-tree
 ./build/stack
 ./build/queue
+```
+
+## Using modules (manual)
+```bash
+cc -std=c11 -c Heap/Heap.c -o Heap.o
+cc -std=c11 -c DSU/DSU.c -o DSU.o
+cc -std=c11 -c Tree/BST.c -o BST.o
 ```
