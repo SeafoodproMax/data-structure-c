@@ -38,11 +38,11 @@ The table below summarizes the exposed operations currently implemented in:
 | Heap | Binary heap (array-based, 1-indexed) | `newHeap`, `freeHeap` | `O(n)` for capacity `n` |
 | Heap | Binary heap (array-based, 1-indexed) | `isEmptyHeap`, `topHeap` | `O(1)` |
 | Heap | Binary heap (array-based, 1-indexed) | `insertHeap`, `deleteHeap` | `O(log n)` |
-| Heap | Fibonacci heap | `createHeap` | `O(1)` |
-| Heap | Fibonacci heap | `insertHeap` | `O(1)` amortized |
-| Heap | Fibonacci heap | `extractMin` | `O(log n)` amortized |
-| Heap | Fibonacci heap | `decreaseKey` | `O(1)` amortized |
-| Heap | Fibonacci heap | `deleteNode` | `O(log n)` amortized |
+| Heap | Fibonacci heap | `newFibHeap` | `O(1)` |
+| Heap | Fibonacci heap | `insertFibHeap` | `O(1)` amortized |
+| Heap | Fibonacci heap | `extractMinFibHeap` | `O(log n)` amortized |
+| Heap | Fibonacci heap | `decreaseKeyFibHeap` | `O(1)` amortized |
+| Heap | Fibonacci heap | `deleteNodeFibHeap` | `O(log n)` amortized |
 | DSU | Disjoint Set Union (path compression + union by rank) | `dsu_init` | `O(n)` |
 | DSU | Disjoint Set Union (path compression + union by rank) | `dsu_find`, `dsu_union` | amortized `O(alpha(n))` |
 | Tree | Binary search tree (not self-balancing) | `createBST` | `O(1)` |
