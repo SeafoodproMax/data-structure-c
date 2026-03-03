@@ -11,9 +11,6 @@ typedef struct BSTNode {
     struct BSTNode *rightChild;
 } BSTNode;
 
-/**
- * @brief Creates a new BST node. (bst_create_node)
- */
 BSTNode* createBST(int data) {
     BSTNode *new_node = malloc(sizeof(BSTNode));
     if (!new_node) {
@@ -26,9 +23,6 @@ BSTNode* createBST(int data) {
     return new_node;
 }
 
-/**
- * @brief Finds the node with the minimum value in a subtree. (bst_find_min)
- */
 BSTNode* findMinBST(BSTNode *node) {
     BSTNode *current = node;
     while (current && current->leftChild != NULL) {
@@ -41,9 +35,6 @@ BSTNode* findMinBST(BSTNode *node) {
 // Core Operations
 // -------------------------------------------------------------------
 
-/**
- * @brief Inserts a new data value into the BST.
- */
 BSTNode* insertBST(BSTNode *root, int data) {
     if (root == NULL) {
         return createBST(data);
@@ -57,9 +48,6 @@ BSTNode* insertBST(BSTNode *root, int data) {
     return root;
 }
 
-/**
- * @brief Searches for a data value in the BST.
- */
 BSTNode* searchBST(BSTNode *root, int data) {
     if (root == NULL || root->data == data) {
         return root;
@@ -72,9 +60,6 @@ BSTNode* searchBST(BSTNode *root, int data) {
     }
 }
 
-/**
- * @brief Deletes a node with the given data from the BST.
- */
 BSTNode* deleteNodeBST(BSTNode *root, int data) {
     if (root == NULL) {
         return root;

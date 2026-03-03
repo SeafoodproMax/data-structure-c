@@ -8,9 +8,6 @@
 int parent[MAX_SIZE];
 int rank_arr[MAX_SIZE];
 
-/**
- * @brief Initializes the DSU structure for 'n' elements (0 to n-1).
- */
 void dsu_init(int n) {
     for (int i = 0; i < n; i++) {
         parent[i] = i;
@@ -18,10 +15,6 @@ void dsu_init(int n) {
     }
 }
 
-/**
- * @brief Finds the representative (root) of the set containing element 'i'.
- * Uses Path Compression.
- */
 int dsu_find(int i) {
     if (parent[i] == i) {
         return i;
@@ -29,10 +22,6 @@ int dsu_find(int i) {
     return parent[i] = dsu_find(parent[i]);
 }
 
-/**
- * @brief Merges the sets containing elements 'i' and 'j'.
- * Uses Union by Rank.
- */
 int dsu_union(int i, int j) {
     int root_i = dsu_find(i);
     int root_j = dsu_find(j);

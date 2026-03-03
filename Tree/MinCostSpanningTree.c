@@ -12,9 +12,6 @@
 // I. Mandatory Graph Structures
 // ----------------------------------------------------------------------
 
-/**
- * @brief Structure representing an edge in the graph.
- */
 typedef struct {
     int u, v;       ///< The two vertices connected by the edge (source and destination).
     int weight;     ///< The weight/cost of the edge.
@@ -213,13 +210,6 @@ int compareEdges(const void* a, const void* b) {
     return edgeA->weight - edgeB->weight;
 }
 
-/**
- * @brief Computes the Minimal Cost Spanning Tree (MCST) using Kruskal's Algorithm.
- * @param num_vertices The number of vertices in the graph (0 to num_vertices-1).
- * @param edges_array The array containing all edges of the graph.
- * @param num_edges The total number of edges in the graph.
- * @return long long The total weight of the MCST. Returns -1 if the graph is disconnected.
- */
 long long kruskal_mcst(int num_vertices, Edge edges_array[], int num_edges) {
     dsu_init(num_vertices);
 
@@ -255,16 +245,6 @@ long long kruskal_mcst(int num_vertices, Edge edges_array[], int num_edges) {
 // V. Prim's Algorithm Template
 // ----------------------------------------------------------------------
 
-/**
- * @brief Computes the Minimal Cost Spanning Tree (MCST) using Prim's Algorithm.
- * * This implementation uses an array-based approach to simulate the priority queue's
- * 'Extract Min' operation (O(V) complexity per step), resulting in O(V^2) total time.
- *
- * @param num_vertices The number of vertices in the graph (0 to num_vertices-1).
- * @param adj_matrix The graph's adjacency matrix where adj_matrix[u][v] is the edge weight.
- * A value of INT_MAX means no direct edge.
- * @return long long The total weight of the MCST. Returns -1 if the graph is disconnected.
- */
 long long prim_mcst(int num_vertices, int adj_matrix[num_vertices][num_vertices]) {
     if (num_vertices > DSU_MAX_SIZE) {
         fprintf(stderr, "Error: Graph size exceeds MAX_SIZE limit for this template.\n");

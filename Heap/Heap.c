@@ -7,21 +7,10 @@
 #include <stdbool.h>
 #include <limits.h>
 
-/**
- * @brief Type definition for the comparison function.
- * returns > 0 if *a has higher priority than *b.
- * * @param a Pointer to the first element (e.g., &data[i]).
- * @param b Pointer to the second element.
- * @return int Positive if a has higher priority, 0 if equal, negative otherwise.
- */
 typedef int (*ComparisonFunction)(const void* a, const void* b);
 
 typedef struct Heap Heap;
 
-/**
- * @brief Structure representing a generic-logic Heap.
- * * Uses 1-based indexing (data[0] is unused) for simpler child/parent calculations.
- */
 struct Heap {
     int *data;
     size_t size;             ///< Current number of elements in the heap.
@@ -95,12 +84,6 @@ void heapify_down(Heap *heap, size_t i) {
 
 // --- Public API Functions ---
 
-/**
- * @brief Creates a new Heap instance.
- * * @param max_capacity The maximum number of elements the heap can hold.
- * @param comp The comparison function, returns > 0 if the first has higher priority than the second.
- * @return Heap* A pointer to the newly created Heap structure, or NULL on failure.
- */
 Heap *newHeap(size_t max_capacity, ComparisonFunction comp) {
     Heap *heap = (Heap *)malloc(sizeof(Heap));
     if (!heap) return NULL;
@@ -119,10 +102,6 @@ Heap *newHeap(size_t max_capacity, ComparisonFunction comp) {
     return heap;
 }
 
-/**
- * @brief Frees all memory associated with the Heap.
- * @param heap The heap structure to be freed.
- */
 void freeHeap(Heap *heap) {
     if (heap) {
         free(heap->data);
@@ -130,21 +109,10 @@ void freeHeap(Heap *heap) {
     }
 }
 
-/**
- * @brief Checks if the Heap is empty.
- * @param heap The heap structure.
- * @return bool True if the heap contains no elements, false otherwise.
- */
 bool isEmptyHeap(Heap *heap) {
     return heap->size == 0;
 }
 
-/**
- * @brief Retrieves the element with the highest priority (the root element).
- * * @param heap The heap structure.
- * @return int The value of the top element. Returns INT_MIN if the heap is empty
- * (handle this edge case carefully in production code).
- */
 int topHeap(Heap *heap) {
     if (isEmptyHeap(heap)) {
         return INT_MIN;
@@ -153,11 +121,6 @@ int topHeap(Heap *heap) {
     return heap->data[1];
 }
 
-/**
- * @brief Inserts a new element into the Heap.
- * @param heap The heap structure.
- * @param data The integer value to insert.
- */
 void insertHeap(Heap *heap, int data) {
     if (heap->size >= heap->capacity) {
         fprintf(stderr, "Error: Heap is full!\n");
@@ -170,10 +133,6 @@ void insertHeap(Heap *heap, int data) {
     heapify_up(heap, heap->size);
 }
 
-/**
- * @brief Deletes the element with the highest priority (the root element).
- * @param heap The heap structure.
- */
 void deleteHeap(Heap *heap) {
     if (isEmptyHeap(heap)) {
         fprintf(stderr, "Error: Heap is empty!\n");
@@ -199,4 +158,3 @@ int max_comp(const void* a, const void* b) {
     return *(const int*)a - *(const int*)b;
 }
 */
-

@@ -17,30 +17,15 @@ typedef struct Queue {
     int MAX_SIZE; // Array size (capacity + 1)
 } Queue;
 
-/**
- * @brief Checks if the circular queue is empty.
- * @param q Queue pointer
- * @return true if the queue is empty
- */
 bool isQueueEmpty(Queue *q) {
     // When front and rear are equal, the queue is empty.
     return q->front == q->rear;
 }
-/**
- * @brief Checks if the circular queue is full.
- * @param q Queue pointer
- * @return true if the queue is full
- */
 bool isQueueFull(Queue *q) {
     // When (rear + 1) % MAX_SIZE equals front, the queue is full.
     return (q->rear + 1) % q->MAX_SIZE == q->front;
 }
 
-/**
- * @brief Constructor: Creates and initializes a new circular queue.
- * @param max_capacity The maximum number of elements the user wants to store (N).
- * @return Queue* Pointer to the newly created queue structure.
- */
 Queue* newQueue(const int max_capacity) {
     if (max_capacity <= 0) {
         fprintf(stderr, "Error: Queue capacity must be greater than 0.\n");
@@ -70,10 +55,6 @@ Queue* newQueue(const int max_capacity) {
     return q;
 }
 
-/**
- * @brief Destructor: Releases the memory occupied by the queue.
- * @param q Pointer to the queue to be destroyed.
- */
 void freeQueue(Queue *q) {
     if (q != NULL) {
         free(q->data); // Free the data array
@@ -81,13 +62,6 @@ void freeQueue(Queue *q) {
     }
 }
 
-/**
- * @brief Push (Enqueue) - Adds an element to the rear of the queue.
- * @param q Queue pointer
- * @param value The element value to be added.
- * @return true if enqueue was successful
- * @return false if the queue is full, enqueue failed
- */
 bool pushQueue(Queue *q, int value) {
     if (isQueueFull(q)) {
         fprintf(stderr, "Error: Queue is full, cannot push element %d.\n", value);
@@ -103,13 +77,6 @@ bool pushQueue(Queue *q, int value) {
     return true;
 }
 
-/**
- * @brief Pop (Dequeue) - Removes and retrieves the element from the front of the queue.
- * @param q Queue pointer
- * @param result Pointer to store the dequeued element value.
- * @return true if dequeue was successful
- * @return false if the queue is empty, dequeue failed
- */
 bool popQueue(Queue *q, int *result) {
     if (isQueueEmpty(q)) {
         fprintf(stderr, "Error: Queue is empty, cannot pop element.\n");
@@ -125,13 +92,6 @@ bool popQueue(Queue *q, int *result) {
     return true;
 }
 
-/**
- * @brief Front (Peek) - Retrieves the element at the front without removing it.
- * @param q Queue pointer
- * @param result Pointer to store the front element value.
- * @return true if successful
- * @return false if the queue is empty
- */
 bool frontQueue(Queue *q, int *result) {
     if (isQueueEmpty(q)) {
         fprintf(stderr, "Error: Queue is empty, cannot peek front element.\n");
